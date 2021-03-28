@@ -40,7 +40,7 @@ var app = new Vue({
         photo: 'none',
         searchTag: "",
         currentPhoto: 'none',
-        year: "2019",
+        year: "2021",
         bottom: false,
         page: 0
     },
