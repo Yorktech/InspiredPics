@@ -219,7 +219,7 @@
                 <div class="card-columns">
                     
                     <div v-for="item in photos" class="card">
-                        <a v-bind:data-uri="item.URI" data-toggle="modal" data-target="#lightbox" href="#">
+                        <a v-bind:data-uri="item.URI" @click="ViewPhoto(item.RowKey)" data-toggle="modal" data-target="#lightbox" href="#">
 
                             <span>
                                 <img class="card-img-top" v-bind:src="item.ThumbUri" alt="Card image cap">
@@ -227,6 +227,11 @@
                             </span>
                         </a>
                         <h5>{{item.Description}}</h5>
+                        <ul class="taglist">
+                            <li class="taglistInner" v-for="tag in item.TagList">
+                                <a class="badge badge-pill badge-dark mr-1" v-on:click="GetTagByName(tag)" href="#">{{tag}}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                
@@ -242,31 +247,42 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                               
-<!-- START ADVERTISER: Wex Photo Video from awin.com -->
+                            <div class="row">
+                                <div class="col">
+                                    <!-- START ADVERTISER: Wex Photo Video from awin.com -->
 
-<a href="https://www.awin1.com/cread.php?s=191280&v=2298&q=101633&r=156518">
-    <img src="https://www.awin1.com/cshow.php?s=191280&v=2298&q=101633&r=156518" border="0">
-</a>
+                                    <a href="https://www.awin1.com/cread.php?s=191280&v=2298&q=101633&r=156518">
+                                        <img src="https://www.awin1.com/cshow.php?s=191280&v=2298&q=101633&r=156518" border="0">
+                                    </a>
 
-<!-- END ADVERTISER: Wex Photo Video from awin.com -->
+                                    <!-- END ADVERTISER: Wex Photo Video from awin.com -->                                 
+                                    <img class="modal-content mt-2" id="img">
+                                    <p class="text-light">View count {{photo.ViewCount}} </p>
+                                    <h4 class="text-light">Tags</h4>
+                                    <ul class="">
+                                        <li  v-for="item in photo.TagList" class="badge badge-pill badge-info mr-1">
+                                            {{item}}
 
-                                   
-                                        <img class="modal-content mt-2" id="img">
-                                        <p class="text-light">Right click on the image and choose open in new tab to see the full size picture</p>
-                                    </div>
+                                        </li>
+                                    </ul>
+                                       <p class="text-light">Right click on the image and choose open in new tab to see the full size picture</p>
+                                </div>
                                 
+                                </div>
+                        </div>
+                               
+
                                
                           
-                        </div>
+                    </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
-                    </div>
+            </div>
       
 
 
-                </div>
+        </div>
             
             
             

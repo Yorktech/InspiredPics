@@ -76,10 +76,10 @@ var app = new Vue({
         },
         ViewPhoto: function(value) {
             console.log("Get photo :" + value);
-            axios.get('https://photofunctions.azurewebsites.net/api/PhotoById?id=' + this.selected.id).then(
+            axios.get('https://photofunctions.azurewebsites.net/api/PhotoById?id=' + value).then(
                 response => {
                     this.photo = response.data;
-                    this.SplitData();
+                    
                 });
         },
         SplitData: function () { 
