@@ -219,7 +219,7 @@
                 <div class="card-columns">
                     
                     <div v-for="item in photos" class="card">
-                        <a v-bind:data-uri="item.URI" @click="ViewPhoto(item.RowKey)" data-toggle="modal" data-target="#lightbox" href="#">
+                        <a v-bind:data-uri="item.URI" @click="ViewPhoto(item.PhotoId)" data-toggle="modal" data-target="#lightbox" href="#">
 
                             <span>
                                 <img class="card-img-top" v-bind:src="item.ThumbUri" alt="Card image cap">
