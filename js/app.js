@@ -20,7 +20,7 @@ Vue.createApp({
         photo: 'none',
         searchTag: "",
         currentPhoto: 'none',
-        year: "2021",
+        year: "2023",
         bottom: false,
         page: 0
     }},
