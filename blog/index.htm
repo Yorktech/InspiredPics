@@ -1,0 +1,398 @@
+<!-- EXAMPLE: Slider -->
+<!-- CUSTOM ANIMATION EXAMPLE -->
+<style>
+
+    /* CUSTOM ANIMATION */
+    .slider[data-slider-id="customAnimation"] li {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       display: block;
+       -webkit-transition: 0.5s;
+       transition: 0.5s;
+       /* before selected */
+       opacity: 0;
+       z-index: 0;
+       -webkit-transform: translateX(-50%);
+       transform: translateX(-50%);
+    }
+    
+    /* selected */
+    .slider[data-slider-id="customAnimation"] li.selected {
+       opacity: 1;
+       z-index: 1;
+       -webkit-transform: translateX(0px);
+       transform: translateX(0px);
+    }
+    
+    /* after been selected */
+    .slider[data-slider-id="customAnimation"] li.hide {
+       opacity: 0;
+       -webkit-transform: translateX(50%);
+       transform: translateX(50%);
+    }
+    
+    
+    /* ignore */
+    .box {
+       width: 100%;
+       height: 400px;
+    }
+    .space { 
+      margin-top: 30px;
+    }
+    </style>
+    
+    <!-- Custom Animation -->
+    <section class="slide whiteSlide" data-title="Custom Animation">
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+          
+            <div class="fix-12-12">
+              <!-- slider -->
+              <ul class="slider autoHeight clickable ae-1" data-slider-id="customAnimation">
+                <li class="selected"><div class="box red"></div></li>
+                <li><div class="box green"></div></li>
+                <li><div class="box blue"></div></li>
+                <li><div class="box pink"></div></li>
+                <li><div class="box yellow"></div></li>
+                <li><div class="box orange"></div></li>
+                <li><div class="box indigo"></div></li>
+              </ul>
+              
+              <!-- controller -->
+              <ul class="controller dots ae-2 space" data-slider-id="customAnimation">
+                <li class="dot selected"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CUSTOM HEIGHT EXAMPLE -->
+    <style>
+    /* CUSTOM HEIGHT */
+    .slider[data-slider-id="customHeight"] li {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       display: block;
+       -webkit-transition: 0.5s;
+       transition: 0.5s;
+       /* before selected */
+       opacity: 0;
+    }
+    
+    /* selected */
+    .slider[data-slider-id="customHeight"] li.selected { opacity: 1; }
+    
+    /* arrows */
+    .leftControl,
+    .rightControl {
+       position: absolute;
+       top: 50%;
+       margin-top: -35px;
+       margin-left: -100px;
+       cursor: pointer;
+       font-size: 0;
+    }
+    
+    .rightControl {
+       right: 0;
+       margin-right: -100px;
+    }
+    
+    .leftControl svg,
+    .rightControl svg {
+       width: 30px;
+       height: 70px;
+    }
+    
+    @media screen and (max-width:1180px) {
+      .leftControl,
+      .rightControl {
+         display:none;
+      }
+    }
+    </style>
+    <section class="slide whiteSlide" data-title="Custom Height with Arrows">
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+           
+            <div class="fix-8-12">
+              
+              <div class="relative">
+                <!-- arrows -->
+                <div class="leftControl ae-2 fromLeft" data-slider-id="customHeight" data-slider-action="prev">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use></svg>
+                </div>
+                <div class="rightControl ae-2 fromRight" data-slider-id="customHeight" data-slider-action="next">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use></svg>
+                </div>
+                
+                <!-- slider -->
+                <ul class="slider autoHeight clickable ae-1" data-slider-id="customHeight">
+                  <li class="selected"><img src="assets/img/inner-81-1.jpg" class="wide" alt="Image"/></li>
+                  <li>
+                    <div class="embedVideo popupContent">
+                      <iframe src="https://www.youtube.com/embed/wPKOPs63l0A?rel=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    </div>
+                  </li>
+                  <li><img src="assets/img/img-90-1.jpg" class="wide" alt="Image"/></li>
+                </ul>
+              </div>
+              
+              <!-- controller -->
+              <ul class="controller dots big ae-3 space" data-slider-id="customHeight">
+                <li class="dot selected"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- QUOTES EXAMPLE -->
+    <style>
+    /* QUOTES */
+    .slider[data-slider-id="quotes"] li {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       display: block;
+       -webkit-transition: 0.5s;
+       transition: 0.5s;
+       /* before selected */
+       opacity: 0;
+    }
+    
+    /* selected */
+    .slider[data-slider-id="quotes"] li.selected { opacity: 1; }
+    
+    /* style dots */
+    .controller[data-slider-id="quotes"] .dot:after {
+       background:transparent;
+       box-shadow:0 0 0 1px rgba(255,255,255,.5);
+    }
+    
+    .controller[data-slider-id="quotes"] .dot.selected:after {
+       background:#fff;
+       box-shadow:0 0 0 1px #fff;
+    }
+    
+    
+    .controller[data-slider-id="quotes"] .dot:hover:after {
+       -webkit-transform: none;
+       transform: none;
+       background:rgba(255,255,255,.5);
+    }
+    </style>
+    <section class="slide" data-title="Quotes with Custom Dots">
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+            
+            <div class="fix-6-12">          
+              <!-- slider -->
+              <ul class="slider autoHeight clickable ae-1 left" data-slider-id="quotes">
+                <li class="selected">
+                  <div class="quoteBubble">
+                    <p class="cropBottom">I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.</p>
+                  </div>
+                  <div class="quoteName ae-2">Marilyn Monroe</div>
+                </li>
+                <li>
+                  <div class="quoteBubble">
+                    <p class="cropBottom">To live is the rarest thing in the world. Most people exist, that is all.</p>
+                  </div>
+                  <div class="quoteName">Oscar Wilde</div>
+                </li>
+                <li>
+                  <div class="quoteBubble">
+                    <p class="cropBottom">There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.</p>
+                  </div>
+                  <div class="quoteName">Albert Einstein</div>
+                </li>
+              </ul>
+              
+              <!-- controller -->
+              <ul class="controller dots ae-3 space" data-slider-id="quotes">
+                <li class="dot selected"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    <!-- Embed Example -->
+    <section class="slide whiteSlide" data-title="Tweets">
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+            
+            <div class="fix-5-12">          
+              <!-- slider -->
+              
+              <ul class="slider ae-2" data-slider-id="tweets">
+                <li class="selected">
+                  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Reimagining Google Fonts - <a href="https://t.co/jJxqD1GLet">https://t.co/jJxqD1GLet</a></p>&mdash; Designmodo (@Designmodo) <a href="https://twitter.com/Designmodo/status/743121924906180609">June 15, 2016</a></blockquote>
+                </li>
+                <li>
+                  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">New on Designmodo Market: Platforma iOS Wireframe Kit - <a href="https://t.co/asyNCLtyfr">https://t.co/asyNCLtyfr</a><br><br>by Great Simple.</p>&mdash; Market by Designmodo (@market_goods) <a href="https://twitter.com/market_goods/status/743369867592499200">June 16, 2016</a></blockquote>
+                </li>
+                <li>
+                  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We&#39;re going to keep working on the Heavy Pulse Rifle today at 4pm EST on <a href="https://t.co/IkImMT8Qnc">https://t.co/IkImMT8Qnc</a> <a href="https://t.co/LpwRp65aEK">pic.twitter.com/LpwRp65aEK</a></p>&mdash; Justin Mezzell (@JustinMezzell) <a href="https://twitter.com/JustinMezzell/status/740964380557250562">June 9, 2016</a></blockquote>
+                </li>
+              </ul>
+              
+              <!-- controller -->
+              <ul class="controller dots ae-3 space" data-slider-id="tweets">
+                <li class="dot selected"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+              </ul>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- script -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    
+    <!-- TABS EXAMPLE -->
+    <style>
+      .pill.controller {
+        font-size: 0;
+        border: 1px solid;
+        display: inline-block;
+        border-radius: 6px;
+      }
+      .pill.controller li {
+        padding: 10px 20px;
+        display: inline-block;
+        border: 1px solid #fff;
+        font-size: initial;
+        -webkit-transiton: 0.5s;
+        transiton: 0.5s;
+      }
+    
+      .pill.controller li:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+      .pill.controller li:last-child {
+        border-radius: 0 4px 4px 0;
+      }
+    
+      .pill.controller li.selected {
+        background: #fff;
+        color: #303030;
+      }
+    </style>
+    
+    <section class="slide kenBurns">
+      <div class="content">
+        <div class="container">
+          <div class="wrap ">
+    
+            <div class="fix-10-12">
+              <ul class="pill controller margin-bottom-5 ae-1" data-slider-id="1">
+                <li class="selected">Tab 1</li>
+                <li>Tab 2</li>
+              </ul>
+            </div>
+            
+            <ul class="slider" data-slider-id="1">
+            
+              <li class="selected">
+                <div class="fix-12-12">
+                  
+                <ul class="flex fixedSpaces later left">
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <div class="button empty margin-bottom-2 videoThumbnail noShadow ae-1"><img class="img-91 wide" src="assets/img/img-91-1.jpg" alt="Video Thumbnail"/></div>
+                    <h3 class="ae-2">Inspiration</h3>
+                    <div class="ae-3"><p class="small">We live in a society where everybody feels guilty.</p></div>
+                  </li>
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <a href="#" class="button empty margin-bottom-2 ae-2"><img class="img-91 wide" src="assets/img/img-91-2.jpg" alt="Image Thumbnail"/></a>
+                    <h3 class="ae-3">Creativity</h3>
+                    <div class="ae-4"><p class="small">You don’t have to be “a creative” to be creative.</p></div>
+                  </li>
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <a href="#" class="button empty margin-bottom-2 ae-3"><img class="img-91 wide" src="assets/img/img-91-3.jpg" alt="Image Thumbnail"/></a>
+                    <h3 class="ae-4">Fashion</h3>
+                    <div class="ae-5"><p class="small">There is no such thing as simple. Simple is hard.</p></div>
+                  </li>
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <a href="#" class="button empty margin-bottom-2 ae-4"><img class="img-91 wide" src="assets/img/img-91-4.jpg" alt="Image Thumbnail"/></a>
+                    <h3 class="ae-5">Photography</h3>
+                    <div class="ae-6"><p class="small">Design makes what was once impossible possible.</p></div>
+                  </li>
+                </ul>
+             
+                </div>
+              </li>
+            
+              <li>
+                <div class="fix-12-12">
+                  
+                <ul class="flex fixedSpaces later left">
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <a href="#" class="button empty margin-bottom-2 ae-1"><img class="img-91 wide" src="assets/img/img-91-4.jpg" alt="Image Thumbnail"/></a>
+                    <h3 class="ae-2">Photography</h3>
+                    <div class="ae-3"><p class="small">Design makes what was once impossible possible.</p></div>
+                  </li>
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <a href="#" class="button empty margin-bottom-2 ae-2"><img class="img-91 wide" src="assets/img/img-91-3.jpg" alt="Image Thumbnail"/></a>
+                    <h3 class="ae-3">Fashion</h3>
+                    <div class="ae-4"><p class="small">There is no such thing as simple. Simple is hard.</p></div>
+                  </li>
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <div class="button empty margin-bottom-2 videoThumbnail noShadow ae-3"><img class="img-91 wide" src="assets/img/img-91-1.jpg" alt="Video Thumbnail"/></div>
+                    <h3 class="ae-4">Inspiration</h3>
+                    <div class="ae-5"><p class="small">We live in a society where everybody feels guilty.</p></div>
+                  </li>
+                  <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+                    <a href="#" class="button empty margin-bottom-2 ae-4"><img class="img-91 wide" src="assets/img/img-91-2.jpg" alt="Image Thumbnail"/></a>
+                    <h3 class="ae-5">Creativity</h3>
+                    <div class="ae-6"><p class="small">You don’t have to be “a creative” to be creative.</p></div>
+                  </li>
+                </ul>
+            
+                </div>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    </section>
